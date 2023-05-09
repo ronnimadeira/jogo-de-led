@@ -10,6 +10,7 @@ function escreva () {
     }
 }
 input.onButtonPressed(Button.A, function () {
+    music.playTone(440, music.beat(BeatFraction.Whole))
     ponto += -1
     basic.clearScreen()
     led.plot(ponto, 2)
@@ -21,6 +22,7 @@ input.onButtonPressed(Button.AB, function () {
     led.plot(ponto, 2)
 })
 input.onButtonPressed(Button.B, function () {
+    music.playTone(262, music.beat(BeatFraction.Whole))
     ponto += 1
     basic.clearScreen()
     led.plot(ponto, 2)
