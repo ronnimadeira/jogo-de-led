@@ -2,6 +2,7 @@ function escreva () {
     basic.clearScreen()
     led.plot(led2, 2)
     if (led2 == 0) {
+        music.playTone(262, music.beat(BeatFraction.Whole))
         basic.showString("A")
         led2 = 2
         A += 1
@@ -9,6 +10,7 @@ function escreva () {
         basic.clearScreen()
         led.plot(led2, 2)
     } else if (led2 == 4) {
+        music.playTone(440, music.beat(BeatFraction.Whole))
         basic.showString("B")
         led2 = 2
         B += 1
@@ -18,21 +20,6 @@ function escreva () {
     }
 }
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.showString("A")
-    basic.showNumber(B)
-    basic.showString("B")
-    basic.showNumber(A)
-    basic.clearScreen()
-    led.plot(led2, 2)
-})
-input.onButtonPressed(Button.A, function () {
-    music.playTone(440, music.beat(BeatFraction.Whole))
-    led2 += -1
-    basic.clearScreen()
-    led.plot(led2, 2)
-    escreva()
-})
-input.onButtonPressed(Button.AB, function () {
     A = 0
     B = 0
     led2 = 2
@@ -40,8 +27,21 @@ input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
     led.plot(led2, 2)
 })
+input.onButtonPressed(Button.A, function () {
+    led2 += -1
+    basic.clearScreen()
+    led.plot(led2, 2)
+    escreva()
+})
+input.onGesture(Gesture.Shake, function () {
+    basic.showString("A")
+    basic.showNumber(B)
+    basic.showString("B")
+    basic.showNumber(A)
+    basic.clearScreen()
+    led.plot(led2, 2)
+})
 input.onButtonPressed(Button.B, function () {
-    music.playTone(262, music.beat(BeatFraction.Whole))
     led2 += 1
     basic.clearScreen()
     led.plot(led2, 2)
