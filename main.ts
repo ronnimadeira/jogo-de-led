@@ -3,18 +3,18 @@ function escreva () {
     led.plot(led2, 2)
     if (led2 == 0) {
         music.playTone(262, music.beat(BeatFraction.Whole))
-        basic.showString("A")
-        led2 = 2
-        A += 1
-        basic.showNumber(A)
-        basic.clearScreen()
-        led.plot(led2, 2)
-    } else if (led2 == 4) {
-        music.playTone(440, music.beat(BeatFraction.Whole))
         basic.showString("B")
         led2 = 2
         B += 1
         basic.showNumber(B)
+        basic.clearScreen()
+        led.plot(led2, 2)
+    } else if (led2 == 4) {
+        music.playTone(440, music.beat(BeatFraction.Whole))
+        basic.showString("A")
+        led2 = 2
+        A += 1
+        basic.showNumber(A)
         basic.clearScreen()
         led.plot(led2, 2)
     }
