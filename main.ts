@@ -35,9 +35,9 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     basic.showString("A")
-    basic.showNumber(B)
-    basic.showString("B")
     basic.showNumber(A)
+    basic.showString("B")
+    basic.showNumber(B)
     basic.clearScreen()
     led.plot(led2, 2)
 })
